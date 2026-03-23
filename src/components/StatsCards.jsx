@@ -8,7 +8,7 @@ import {
   CloseCircleOutlined,
 } from '@ant-design/icons'
 
-export default function StatsCards({ incidents }) {
+export default function StatsCards({ incidents, isDark }) {
   const total = incidents.length
   const open = incidents.filter(i => i.status === 'Open').length
   const inProgress = incidents.filter(i => i.status === 'In Progress').length
@@ -20,36 +20,36 @@ export default function StatsCards({ incidents }) {
       title: 'Total Incidents',
       value: total,
       icon: <AlertOutlined />,
-      color: '#1d2d44',
-      bg: '#e8ecf0',
+      color: isDark ? '#7e9cbf' : '#1d2d44',
+      bg: isDark ? '#1a2535' : '#e8ecf0',
     },
     {
       title: 'Open',
       value: open,
       icon: <ExclamationCircleOutlined />,
       color: '#1677ff',
-      bg: '#e6f4ff',
+      bg: isDark ? '#111d2c' : '#e6f4ff',
     },
     {
       title: 'In Progress',
       value: inProgress,
       icon: <SyncOutlined spin />,
       color: '#fa8c16',
-      bg: '#fff7e6',
+      bg: isDark ? '#2b1d11' : '#fff7e6',
     },
     {
       title: 'Resolved',
       value: resolved,
       icon: <CheckCircleOutlined />,
       color: '#52c41a',
-      bg: '#f6ffed',
+      bg: isDark ? '#162312' : '#f6ffed',
     },
     {
       title: 'Critical',
       value: critical,
       icon: <CloseCircleOutlined />,
       color: '#f5222d',
-      bg: '#fff1f0',
+      bg: isDark ? '#2a1215' : '#fff1f0',
     },
   ]
 
