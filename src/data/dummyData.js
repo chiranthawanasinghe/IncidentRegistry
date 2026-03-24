@@ -2,7 +2,7 @@ export const incidents = [
   {
     id: 'INC-001',
     title: 'Production database connection timeout',
-    status: 'Open',
+    status: 'Created',
     priority: 'Critical',
     category: 'Infrastructure',
     assignee: 'John Smith',
@@ -15,7 +15,7 @@ export const incidents = [
   {
     id: 'INC-002',
     title: 'API gateway returning 502 errors',
-    status: 'In Progress',
+    status: 'RCA & Impact Analysis',
     priority: 'High',
     category: 'Network',
     assignee: 'Maria Garcia',
@@ -28,7 +28,7 @@ export const incidents = [
   {
     id: 'INC-003',
     title: 'User login failure for SSO accounts',
-    status: 'In Progress',
+    status: 'Implementing Mitigations',
     priority: 'High',
     category: 'Authentication',
     assignee: 'David Lee',
@@ -41,7 +41,7 @@ export const incidents = [
   {
     id: 'INC-004',
     title: 'Scheduled backup job failing silently',
-    status: 'Open',
+    status: 'Created',
     priority: 'High',
     category: 'Data Management',
     assignee: 'Sarah Johnson',
@@ -54,7 +54,7 @@ export const incidents = [
   {
     id: 'INC-005',
     title: 'Email notification service down',
-    status: 'Resolved',
+    status: 'OPS Review',
     priority: 'Medium',
     category: 'Communication',
     assignee: 'Emily Chen',
@@ -67,7 +67,7 @@ export const incidents = [
   {
     id: 'INC-006',
     title: 'Dashboard charts not loading',
-    status: 'Resolved',
+    status: 'Approved',
     priority: 'Medium',
     category: 'Frontend',
     assignee: 'Kevin Park',
@@ -80,7 +80,7 @@ export const incidents = [
   {
     id: 'INC-007',
     title: 'Storage disk usage at 92%',
-    status: 'Open',
+    status: 'Created',
     priority: 'Critical',
     category: 'Infrastructure',
     assignee: 'John Smith',
@@ -93,7 +93,7 @@ export const incidents = [
   {
     id: 'INC-008',
     title: 'Slow response times on search API',
-    status: 'In Progress',
+    status: 'RCA & Impact Analysis',
     priority: 'Medium',
     category: 'Performance',
     assignee: 'Maria Garcia',
@@ -106,7 +106,7 @@ export const incidents = [
   {
     id: 'INC-009',
     title: 'SSL certificate expiring in 7 days',
-    status: 'Open',
+    status: 'Created',
     priority: 'High',
     category: 'Security',
     assignee: 'David Lee',
@@ -119,7 +119,7 @@ export const incidents = [
   {
     id: 'INC-010',
     title: 'Memory leak in worker service',
-    status: 'In Progress',
+    status: 'Implementing Mitigations',
     priority: 'High',
     category: 'Application',
     assignee: 'Emily Chen',
@@ -132,7 +132,7 @@ export const incidents = [
   {
     id: 'INC-011',
     title: 'Third-party payment gateway timeout',
-    status: 'Closed',
+    status: 'Approved',
     priority: 'Critical',
     category: 'Integration',
     assignee: 'Kevin Park',
@@ -145,7 +145,7 @@ export const incidents = [
   {
     id: 'INC-012',
     title: 'Incorrect timezone in audit logs',
-    status: 'Resolved',
+    status: 'OPS Review',
     priority: 'Low',
     category: 'Logging',
     assignee: 'Sarah Johnson',
@@ -158,7 +158,7 @@ export const incidents = [
   {
     id: 'INC-013',
     title: 'CI/CD pipeline failing on main branch',
-    status: 'Open',
+    status: 'Created',
     priority: 'High',
     category: 'DevOps',
     assignee: 'David Lee',
@@ -171,7 +171,7 @@ export const incidents = [
   {
     id: 'INC-014',
     title: 'Mobile app crash on iOS 17.4',
-    status: 'In Progress',
+    status: 'RCA & Impact Analysis',
     priority: 'High',
     category: 'Mobile',
     assignee: 'Kevin Park',
@@ -184,7 +184,7 @@ export const incidents = [
   {
     id: 'INC-015',
     title: 'Report export generating empty files',
-    status: 'Closed',
+    status: 'Approved',
     priority: 'Medium',
     category: 'Application',
     assignee: 'Maria Garcia',
@@ -196,8 +196,8 @@ export const incidents = [
   },
 ]
 
-export const STATUS_OPTIONS = ['Open', 'In Progress', 'Resolved', 'Closed']
-export const PRIORITY_OPTIONS = ['Critical', 'High', 'Medium', 'Low']
+export const STATUS_OPTIONS = ['Created', 'RCA & Impact Analysis', 'Implementing Mitigations', 'OPS Review', 'Approved']
+export const PRIORITY_OPTIONS = ['Sev-1', 'Sev-2', 'Sev-3', 'Sev-4', 'Sev-5']
 export const CATEGORY_OPTIONS = [
   'Infrastructure', 'Network', 'Authentication', 'Data Management',
   'Communication', 'Frontend', 'Performance', 'Security',
