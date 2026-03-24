@@ -4,17 +4,19 @@ import { SearchOutlined, ReloadOutlined, LinkOutlined } from '@ant-design/icons'
 import { STATUS_OPTIONS, PRIORITY_OPTIONS } from '../data/dummyData'
 
 const STATUS_COLOR = {
-  'Open': 'blue',
-  'In Progress': 'orange',
-  'Resolved': 'green',
-  'Closed': 'default',
+  'Created': 'blue',
+  'RCA & Impact Analysis': 'orange',
+  'Implementing Mitigations': 'gold',
+  'OPS Review': 'purple',
+  'Approved': 'green',
 }
 
 const PRIORITY_COLOR = {
-  'Critical': 'red',
-  'High': 'volcano',
-  'Medium': 'gold',
-  'Low': 'cyan',
+  'Sev-1': 'red',
+  'Sev-2': 'volcano',
+  'Sev-3': 'gold',
+  'Sev-4': 'cyan',
+  'Sev-5': 'default',
 }
 
 export default function IncidentTable({ incidents, isDark }) {
@@ -77,12 +79,12 @@ export default function IncidentTable({ incidents, isDark }) {
       ),
     },
     {
-      title: 'Priority',
+      title: 'Severity',
       dataIndex: 'priority',
       key: 'priority',
       width: 110,
       sorter: (a, b) => {
-        const order = { Critical: 0, High: 1, Medium: 2, Low: 3 }
+        const order = { 'Sev-1': 0, 'Sev-2': 1, 'Sev-3': 2, 'Sev-4': 3, 'Sev-5': 4 }
         return order[a.priority] - order[b.priority]
       },
       render: priority => (
@@ -100,7 +102,7 @@ export default function IncidentTable({ incidents, isDark }) {
       render: assignee => <span className="text-sm" style={{ color: c.primary }}>{assignee}</span>,
     },
     {
-      title: 'Reporter',
+      title: 'Review Facilitator',
       dataIndex: 'reporter',
       key: 'reporter',
       width: 140,
@@ -201,7 +203,7 @@ export default function IncidentTable({ incidents, isDark }) {
         scroll={{ x: 1000 }}
         size="middle"
         onRow={record => ({
-          style: record.priority === 'Critical' && record.status === 'Open'
+          style: record.priority === 'Sev-1' && record.status === 'Created'
             ? { background: isDark ? 'rgba(239,68,68,0.08)' : 'rgba(239,68,68,0.05)' }
             : {},
         })}

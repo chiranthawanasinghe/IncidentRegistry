@@ -10,10 +10,10 @@ import {
 
 export default function StatsCards({ incidents, isDark }) {
   const total = incidents.length
-  const open = incidents.filter(i => i.status === 'Open').length
-  const inProgress = incidents.filter(i => i.status === 'In Progress').length
-  const resolved = incidents.filter(i => i.status === 'Resolved').length
-  const critical = incidents.filter(i => i.priority === 'Critical').length
+  const created = incidents.filter(i => i.status === 'Created').length
+  const rcaAnalysis = incidents.filter(i => i.status === 'RCA & Impact Analysis').length
+  const approved = incidents.filter(i => i.status === 'Approved').length
+  const critical = incidents.filter(i => i.priority === 'Sev-1').length
 
   const cards = [
     {
@@ -24,28 +24,28 @@ export default function StatsCards({ incidents, isDark }) {
       bg: isDark ? '#1a2535' : '#e8ecf0',
     },
     {
-      title: 'Open',
-      value: open,
+      title: 'Created',
+      value: created,
       icon: <ExclamationCircleOutlined />,
       color: '#1677ff',
       bg: isDark ? '#111d2c' : '#e6f4ff',
     },
     {
-      title: 'In Progress',
-      value: inProgress,
+      title: 'RCA & Impact Analysis',
+      value: rcaAnalysis,
       icon: <SyncOutlined spin />,
       color: '#fa8c16',
       bg: isDark ? '#2b1d11' : '#fff7e6',
     },
     {
-      title: 'Resolved',
-      value: resolved,
+      title: 'Approved',
+      value: approved,
       icon: <CheckCircleOutlined />,
       color: '#52c41a',
       bg: isDark ? '#162312' : '#f6ffed',
     },
     {
-      title: 'Critical',
+      title: 'Sev-1',
       value: critical,
       icon: <CloseCircleOutlined />,
       color: '#f5222d',
